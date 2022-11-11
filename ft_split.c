@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 10:48:58 by tlemos-m          #+#    #+#             */
-/*   Updated: 2022/11/11 22:16:01 by marvin           ###   ########.fr       */
+/*   Updated: 2022/11/11 22:25:35 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ static int	free_memory(char **res, int k)
 			k--;
 		}
 		free(res);
-		return (0);
 	}
 	return (0);
 }
