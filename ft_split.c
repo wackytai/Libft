@@ -6,23 +6,20 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 10:48:58 by tlemos-m          #+#    #+#             */
-/*   Updated: 2022/11/11 22:25:35 by marvin           ###   ########.fr       */
+/*   Updated: 2022/11/12 13:02:11 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	free_memory(char **res, int k)
+static int	free_mem(char **res, int k)
 {
-	if (!res[k])
+	while (k)
 	{
-		while (k)
-		{
-			free(res[k]);
-			k--;
-		}
-		free(res);
+		free(res[k]);
+		k--;
 	}
+	free(res);
 	return (0);
 }
 
@@ -43,7 +40,7 @@ static char	**create_substr(char **res, char const *s, char c, int i)
 		{
 			res[k] = ft_substr(s, 0, j);
 			if (!res[k])
-				free_memory(res, k);
+				free_mem(res, k);
 		}
 		s = s + j;
 	}
@@ -70,6 +67,6 @@ char	**ft_split(char const *s, char c)
 	res = malloc((i + 1) * sizeof(char *));
 	if (!res)
 		return (0);
-	create_substr(res, s, c, i);
+	res = create_substr(res, s, c, i);
 	return (res);
 }
