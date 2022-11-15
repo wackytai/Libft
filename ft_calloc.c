@@ -6,7 +6,7 @@
 /*   By: tlemos-m <tlemos-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 11:09:34 by tlemos-m          #+#    #+#             */
-/*   Updated: 2022/11/11 10:16:24 by tlemos-m         ###   ########.fr       */
+/*   Updated: 2022/11/15 10:54:10 by tlemos-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,6 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	i = 0;
 	n = nmemb * size;
 	s = malloc(n);
-	if (n / nmemb != size)
-		return (NULL);
 	if (!s)
 		return (NULL);
 	while (i < n)

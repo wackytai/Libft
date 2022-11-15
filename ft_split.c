@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tlemos-m <tlemos-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 10:48:58 by tlemos-m          #+#    #+#             */
-/*   Updated: 2022/11/12 13:02:11 by marvin           ###   ########.fr       */
+/*   Updated: 2022/11/14 09:08:04 by tlemos-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static char	**create_substr(char **res, char const *s, char c, int i)
 	int	k;
 
 	k = -1;
-	while (k++ < i)
+	while (++k < i)
 	{
 		j = 0;
 		while (*s == c)
@@ -44,7 +44,7 @@ static char	**create_substr(char **res, char const *s, char c, int i)
 		}
 		s = s + j;
 	}
-	res[k - 1] = 0;
+	res[k] = 0;
 	return (res);
 }
 

@@ -16,8 +16,6 @@ BONUS_SOURCES = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c \
 				ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c \
 				ft_lstclear.c ft_lstiter.c ft_lstmap.c
 
-# .h Files
-H_SOURCES = libft.h
 
 # Object Files
 OBJ = $(C_SOURCES:.c=.o)
@@ -31,16 +29,13 @@ CREATE = @ar -rc
 #Command to Remove:
 REMOVE = @rm -f
 
-# Compiler
-CC = gcc
-
 # Flags for the Compiler
 CFLAGS = -Wall -Wextra -Werror
 
 #Compilation and Linking
 all: $(NAME)
 
-$(NAME):	$(OBJ) $(H_SOURCES)
+$(NAME):	$(OBJ)
 			$(CREATE) $(NAME) $(OBJ)
 
 
@@ -48,7 +43,7 @@ bonus:	$(NAME) $(OBJ_BONUS)
 		$(CREATE) $(NAME) $(OBJ_BONUS)
 
 clean:	
-		$(REMOVE) $(OBJ) $(OBJ_BONUS)
+		$(REMOVE) *.o
 
 fclean:	clean
 		$(REMOVE) $(NAME)
